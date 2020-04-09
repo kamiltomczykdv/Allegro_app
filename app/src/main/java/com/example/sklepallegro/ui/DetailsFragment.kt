@@ -37,6 +37,7 @@ class DetailsFragment : Fragment() {
         view.findViewById<TextView>(R.id.item_description_txv).text =
             Html.fromHtml(offer?.description, Html.FROM_HTML_MODE_LEGACY)
         toolbar = view.findViewById(R.id.toolbar)
+        toolbar.title=offer?.name
         toolbar.navigationIcon = resources.getDrawable(R.drawable.arrow)
         toolbar.setNavigationOnClickListener {
             activity?.onBackPressed()

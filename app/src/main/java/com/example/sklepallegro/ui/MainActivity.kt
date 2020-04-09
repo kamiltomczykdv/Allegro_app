@@ -75,21 +75,21 @@ class MainActivity : AppCompatActivity() {
             }
     }
 
-    private fun priceRange(offersList: List<Offer>){
-        for (offer:Offer in offersList){
-            if (offer.price.amount in 50.0..1000.0){
+    private fun priceRange(offersList: List<Offer>) {
+        for (offer: Offer in offersList) {
+            if (offer.price.amount in 50.0..1000.0) {
                 temporaryOffersList.add(offer)
             }
         }
     }
 
-    private fun sort(){
-        for (i in temporaryOffersList.indices){
-            for (j in 0 until temporaryOffersList.size-1){
-                if (temporaryOffersList[j].price.amount>temporaryOffersList[j+1].price.amount){
-                    val temp=temporaryOffersList[j]
-                    temporaryOffersList[j]=temporaryOffersList[j+1]
-                    temporaryOffersList[j+1]=temp
+    private fun sort() {
+        for (i in temporaryOffersList.indices) {
+            for (j in 0 until temporaryOffersList.size - 1) {
+                if (temporaryOffersList[j].price.amount > temporaryOffersList[j + 1].price.amount) {
+                    val temp = temporaryOffersList[j]
+                    temporaryOffersList[j] = temporaryOffersList[j + 1]
+                    temporaryOffersList[j + 1] = temp
                 }
             }
         }
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         recyclerView = findViewById(R.id.rv_items)
         progressBar = findViewById(R.id.main_pb)
-        temporaryOffersList= mutableListOf()
+        temporaryOffersList = mutableListOf()
     }
 
     private fun initList(offerList: List<Offer>) {
