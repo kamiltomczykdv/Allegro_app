@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "There is no internet connection", Toast.LENGTH_LONG)
                             .show()
                         progressBar.visibility = View.INVISIBLE
+                        temporaryOffersList.clear()
                     }
                 }
             }
